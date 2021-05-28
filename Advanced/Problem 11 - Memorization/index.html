@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorization</title>
+</head>
+<body>
+    <p>
+        function test returns random number <br>
+        function memorizedTest is a memorized function test <br>
+        function test2 returns given number <br>
+        function memorizedTest2 is a memorized function test2 <br>
+        <br>
+        memorizedTest(1) = <span id="answer1"></span> <br>
+        memorizedTest(1) = <span id="answer2"></span> <br>
+        memorizedTest(2) = <span id="answer3"></span> <br>
+        memorizedTest2(1) = <span id="answer4"></span> <br>
+    </p>
+    <script src="Memorization.js"></script>
+    <script>
+        function test(value) {
+            return Math.trunc(Math.random() * 100);
+        }
+        function test2(value) {
+            return value;
+        }
+        let memorizedTest = makeMemorized(test);
+        let memorizedTest2 = makeMemorized(test2);
+        document.getElementById("answer1").innerHTML = memorizedTest(1);    
+        document.getElementById("answer2").innerHTML = memorizedTest(1);    
+        document.getElementById("answer3").innerHTML = memorizedTest(2);    
+        document.getElementById("answer4").innerHTML = memorizedTest2(1);    
+    </script>
+</body>
+</html>
