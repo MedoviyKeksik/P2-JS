@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unfold</title>
+</head>
+<body>
+    <p>
+        generate 10 random numbers using unfold <br>
+        function callback(value) => returns tuple of current random number and its index <br>
+        unfold(callback, 0) = <span id="answer"></span>
+    </p>
+    <script src="LinearUnfold.js"></script>
+    <script>
+        let count = 0;
+        function callback(value) {
+            count++;
+            if (count == 11) return false;
+            return [Math.round(Math.random() * 10), count];
+        }
+        document.getElementById("answer").innerHTML = unfold(callback, 0);
+    </script>    
+</body>
+</html>
