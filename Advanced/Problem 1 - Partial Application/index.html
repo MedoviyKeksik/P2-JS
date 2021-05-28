@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partial</title>
+</head>
+<body>
+    <p>
+        Example: <br>
+        function test(x, y) => sum of x, y <br>
+        function partialTest(y) => test(3, y) <br>
+        partialTest(5) = <span id="answer"></span>
+    </p>
+    <script src="Partial.js"></script>
+    <script>
+        function test(x, y) {
+            return x + y;
+        }
+        let partialTest = partial(test, 5);
+        document.getElementById("answer").innerHTML = partialTest(3);
+    </script>
+    
+</body>
+</html>
