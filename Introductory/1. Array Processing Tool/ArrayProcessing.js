@@ -69,7 +69,7 @@ function Example(functionName, func, ...args) {
     return block;
 }
 
-let node = document.querySelector(".ArrayProcessingTool");
+let node = document.querySelector(".array-processing-tool");
 // SubSumSlow
 node.appendChild(Example('SubsumSlow', ArrayProcessingTool.SubsumSlow, [-1, 2, 3, -9]));
 node.appendChild(Example('SubsumSlow', ArrayProcessingTool.SubsumSlow, [2, -1, 2, 3, -9]));
