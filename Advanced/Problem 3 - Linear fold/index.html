@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fold</title>
+</head>
+<body>
+    <p>
+        function callback(previousValue, currentValue, index, array) => previousValue + currentValue; // sum of array <br>
+        fold([11, 9, 1, 4], callback, 0) = <span id="answer"></span>
+    </p>
+    <script src="LinearFold.js"></script>
+    <script>
+        function callback(prev, curr, index, array) {
+            return prev + curr;
+        }
+        document.getElementById("answer").innerHTML = fold([11, 9, 1, 4], callback, 0);
+    </script>    
+</body>
+</html>
