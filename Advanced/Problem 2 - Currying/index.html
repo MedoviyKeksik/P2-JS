@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currying</title>
+</head>
+<body>
+    <p>
+        function test(x, y, z) => sum of x, y, z <br>
+        function curryTest => curried test <br>
+        curryTest(3)(4, 5) = <span id="answer"></span>
+    </p>
+    <script src="Currying.js"></script>
+    <script>
+        function test(x, y, z) {
+            return x + y + z;
+        }
+        let curryTest = curry(test);
+        document.getElementById("answer").innerHTML = curryTest(3)(4, 5);
+    </script>
+</body>
+</html>
