@@ -20,6 +20,7 @@ function notLazyFun(a, b, c) {
     return a + b + c;
 }
 
+// See the sequence of alerts
 alert('1');
 let a = 1, b = 2, c = 3;
 let lazyFun = makeLazy(notLazyFun, a, b, c);

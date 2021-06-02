@@ -12,7 +12,23 @@ class ArrayProcessingTool {
     }
 
     static Subsum(arr) {
-        return 0;
+        let leftBound = 0;
+        let rightBound = -1;
+        let currentSum = 0;
+        let result = 0;
+        while (rightBound + 1 < arr.length) {
+            rightBound++;
+            currentSum += arr[rightBound];
+            if (currentSum <= 0) {
+                while (rightBound + 1 < arr.length && arr[rightBound] < 0) rightBound++;
+                leftBound = rightBound;
+                currentSum = arr[leftBound];
+            }
+            if (currentSum > result) {
+                result = currentSum;
+            }
+        }
+        return result;
     }
     
     static SearchMin(arr) {
@@ -39,22 +55,22 @@ class ArrayProcessingTool {
 
 
     static SelectionTask(arr) {
-        let left = 0;
-        let right = 0;
-        let best = 0;
+        let leftBound = 0;
+        let rightBound = 0;
+        let bestStartIndex = 0;
         let bestSize = 1;
-        while (right < arr.length - 1) {
-            if (arr[right] <= arr[right + 1]) {
-                right++;
+        while (rightBound < arr.length - 1) {
+            if (arr[rightBound] <= arr[rightBound + 1]) {
+                rightBound++;
             } else {
-                left = ++right
+                leftBound = ++rightBound
             }
-            if (right - left + 1 > bestSize) {
-                bestSize = right - left + 1;
-                best = left;
+            if (rightBound - leftBound + 1 > bestSize) {
+                bestSize = rightBound - leftBound + 1;
+                bestStartIndex = leftBound;
             }
         }
-        return {"start": best, "length": bestSize};
+        return arr.slice(bestStartIndex, bestStartIndex + bestSize);
     }
 }
 
