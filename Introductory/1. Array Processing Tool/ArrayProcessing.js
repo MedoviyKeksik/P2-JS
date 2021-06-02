@@ -53,7 +53,6 @@ class ArrayProcessingTool {
         return (arr[Math.trunc(arr.length / 2)] + arr[Math.trunc(arr.length / 2) - 1]) / 2;
     }
 
-
     static SelectionTask(arr) {
         let leftBound = 0;
         let rightBound = 0;
@@ -131,3 +130,11 @@ node.appendChild(Example('SearchMedian', ArrayProcessingTool.SearchMedian, [100,
 node.appendChild(Example('SearchMedian', ArrayProcessingTool.SearchMedian, [1, 2, 3]));
 node.appendChild(Example('SearchMedian', ArrayProcessingTool.SearchMedian, [-1, -2, -3]));
 
+// SelectionTask
+node.appendChild(Example('SelectionTask', ArrayProcessingTool.SelectionTask, [-1, 2, 3, -9]));
+node.appendChild(Example('SelectionTask', ArrayProcessingTool.SelectionTask, [2, -1, 2, 3, -9]));
+node.appendChild(Example('SelectionTask', ArrayProcessingTool.SelectionTask, [-1, 2, 3, -9, 11]));
+node.appendChild(Example('SelectionTask', ArrayProcessingTool.SelectionTask, [-2, -1, 1, 2]));
+node.appendChild(Example('SelectionTask', ArrayProcessingTool.SelectionTask, [100, -9, 2, -3, 5]));
+node.appendChild(Example('SelectionTask', ArrayProcessingTool.SelectionTask, [1, 2, 3]));
+node.appendChild(Example('SelectionTask', ArrayProcessingTool.SelectionTask, [-1, -2, -3]));
